@@ -19,11 +19,13 @@ def get_args():
 
     parser.add_argument("word", metavar="word", help="A word")
 
-    parser.add_argument('-s',
-                        '--side',
-                        metavar="side",
-                        help="starboard or larboard",
-                        default='larboard')
+    # parser.add_argument('-s',
+    #                     '--side',
+    #                     metavar="side",
+    #                     help="starboard or larboard",
+    #                     default='larboard')
+
+    parser.add_argument("-s", "--starboard", help="Starboard side", action="store_true")
 
     return parser.parse_args()
 
@@ -34,7 +36,9 @@ def main():
 
     args = get_args()
     word = args.word
-    side = args.side.lower()
+    # side = args.side.lower()
+    side_logical = args.starboard
+    side = "starboard" if side_logical else "larboard"
     article = ""
     if word[0].isupper():
         article = "An" if word[0].lower() in "aeiou" else "A"

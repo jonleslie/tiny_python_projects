@@ -90,3 +90,11 @@ def test_file():
         finally:
             if os.path.isfile(out_file):
                 os.remove(out_file)
+
+# --------------------------------------------------
+def test_text_to_lower():
+    """Test lowercase flagT"""
+
+    out = getoutput(f'{prg} "FOO BAR BAZ" -ee')
+    assert out.strip() == 'foo bar baz'
+

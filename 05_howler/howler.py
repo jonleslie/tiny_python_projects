@@ -26,8 +26,12 @@ def get_args():
         "-o", "--outfile", help="Output filename", metavar="str", type=str, default=""
     )
 
-    parser.add_argument("--ee",
-                        "--lowercase",
+    # parser.add_argument(
+    #     "-o", "--outdir", help="Output directory", metavar="str", type=str, default=""
+    # )
+
+    parser.add_argument("-e",
+                        "--ee",
                         help="Convert to lowercase",
                         action='store_true')
 

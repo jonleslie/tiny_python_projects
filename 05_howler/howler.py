@@ -30,10 +30,7 @@ def get_args():
     #     "-o", "--outdir", help="Output directory", metavar="str", type=str, default=""
     # )
 
-    parser.add_argument("-e",
-                        "--ee",
-                        help="Convert to lowercase",
-                        action='store_true')
+    parser.add_argument("-e", "--ee", help="Convert to lowercase", action="store_true")
 
     args = parser.parse_args()
 

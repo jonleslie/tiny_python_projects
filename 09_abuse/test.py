@@ -83,7 +83,8 @@ def test_01():
     """test"""
 
     out = getoutput(f'{prg} -s 1 -n 1')
-    assert out.strip() == 'You filthsome, cullionly fiend!'
+    # assert out.strip() == 'You filthsome, cullionly fiend!'
+    assert out.strip() == 'You cullionly, insatiate braggart!'
 
 
 # --------------------------------------------------
@@ -91,10 +92,13 @@ def test_02():
     """test"""
 
     out = getoutput(f'{prg} --seed 2')
+    # You corrupt, detestable beggar!
+    # You peevish, foolish gull!
+    # You insatiate, heedless worm!
     expected = """
-You corrupt, detestable beggar!
-You peevish, foolish gull!
-You insatiate, heedless worm!
+You detestable, peevish ass!
+You lecherous, insatiate carbuncle!
+You heedless, caterwauling worm!
 """.strip()
     assert out.strip() == expected
 

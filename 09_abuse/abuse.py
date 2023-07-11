@@ -14,29 +14,30 @@ def get_args():
     """Get command-line arguments"""
 
     parser = argparse.ArgumentParser(
-        description='Heap abuse',
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+        description="Heap abuse", formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
 
-    parser.add_argument('-a',
-                        '--adjectives',
-                        help='Number of adjectives',
-                        metavar='adjectives',
-                        type=int,
-                        default=2)
-    
-    parser.add_argument('-n',
-                        '--number',
-                        help='Number of insults',
-                        metavar='adjectives',
-                        type=int,
-                        default=3)
+    parser.add_argument(
+        "-a",
+        "--adjectives",
+        help="Number of adjectives",
+        metavar="adjectives",
+        type=int,
+        default=2,
+    )
 
-    parser.add_argument('-s',
-                        '--seed',
-                        help='Random seed',
-                        metavar='seed',
-                        type=int,
-                        default=None) 
+    parser.add_argument(
+        "-n",
+        "--number",
+        help="Number of insults",
+        metavar="adjectives",
+        type=int,
+        default=3,
+    )
+
+    parser.add_argument(
+        "-s", "--seed", help="Random seed", metavar="seed", type=int, default=None
+    )
 
     args = parser.parse_args()
 
@@ -47,6 +48,7 @@ def get_args():
         parser.error(f'--number "{args.number}" must be > 0')
 
     return args
+
 
 # --------------------------------------------------
 def main():
@@ -60,13 +62,14 @@ def main():
 
     adj_arg = args.adjectives
     ins_arg = args.number
-    seed_arg = args.seed
+    # seed_arg = args.seed
 
     for _ in range(ins_arg):
         noun_list = random.choice(nouns)
         # adjective_list = random.sample(adjectives.split(), k=adj_arg)
-        adj = ", ".join(random.sample(adjectives, k = adj_arg))
-        print(f'You {adj} {noun_list}!')
+        adj = ", ".join(random.sample(adjectives, k=adj_arg))
+        print(f"You {adj} {noun_list}!")
+
 
 adjectives = """
 bankrupt base caterwauling corrupt cullionly detestable dishonest false 
@@ -85,5 +88,5 @@ scold slave swine traitor varlet villain worm
 
 
 # --------------------------------------------------
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

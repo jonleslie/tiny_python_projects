@@ -14,7 +14,8 @@ def get_args():
     """Get command-line arguments"""
 
     parser = argparse.ArgumentParser(
-        description="Heap abuse", formatter_class=argparse.ArgumentDefaultsHelpFormatter
+        description="Heap abuse", 
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
 
     parser.add_argument(
@@ -55,7 +56,7 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
-    random.seed(args.seed)
+    random.seed(args.seed, version=1)
 
     assert len(adjectives) == 36
     assert len(nouns) == 39

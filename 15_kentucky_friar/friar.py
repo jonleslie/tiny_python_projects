@@ -27,10 +27,10 @@ def get_args():
     if os.path.isfile(args.text):
         args.text = open(args.text).read().rstrip()
 
-    return args
-    
+    return args 
 
 # --------------------------------------------------
+
 
 def fry(word):
     if word.lower() == 'you':
@@ -42,10 +42,9 @@ def fry(word):
         if re.search('[aeiouy]', first):
             # return match[:-1] + "'"
             return match.group(1) + "in'"
-        else:
-            return word
-    else:
         return word
+    return word
+
 
 def test_fry():
     assert fry('you') == "y'all"
@@ -55,11 +54,11 @@ def test_fry():
     assert fry('swing') == "swing"
     assert fry('father') == "father"
 
+
 def main():
     """Make a jazz noise here"""
 
     args = get_args()
-    text = args.text
 
     # print(text)
 
@@ -70,9 +69,10 @@ def main():
         # for word in re.split(r'(\W+)', line.rstrip()):
         #     words.append(fry(word))
         # words = [fry(word) for word in re.split(r'(\W+)', line.rstrip())]
-        
         print(''.join(map(fry, re.split(r'(\W+)', line.rstrip()))))
 
 # --------------------------------------------------
+
+
 if __name__ == '__main__':
     main()
